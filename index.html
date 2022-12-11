@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Spartan's Calculator - SPARTAN</title>
+</head>
+<body>
+	<div class="header">
+	<center><h2><b style="color: red;">SPARTAN'S</b><i style="color: white;"> CALCULATOR</i></h2></center>
+	</div>
+
+<div class="container">
+	<div class="calculator">
+		<input type="text" placeholder="0" class="input" id="inputsc">
+		<button onclick="display('1')">1</button>
+		<button onclick="display('2')">2</button>
+		<button onclick="display('3')">3</button>
+		<button onclick="display('4')">4</button>
+		<button onclick="display('5')">5</button>
+		<button onclick="display('6')">6</button>
+		<button onclick="display('7')">7</button>
+		<button onclick="display('8')">8</button>
+		<button onclick="display('9')">9</button>
+		<button onclick="display('0')">0</button>
+		<button onclick="display('+')">+</button>
+		<button onclick="display('-')">-</button>
+		<button onclick="display('*')">*</button>
+		<button onclick="display('/')">/</button>
+		<button onclick="cls()" style="color: dodgerblue;">CLS</button>
+
+		<button onclick="del()" style="background-color: white;">DEL</button>
+		<button onclick="calculate()" class="cali">=</button>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--- THIS PART OF IS JAVASCRIPT ----->
+<script>
+	window.alert('Scroll down and use Spartans calculate. Thank You.')
+</script>
+<script>
+	let a
+	function display(num) {
+		a.value+=num
+	}
+
+	function calculate(){
+		a.value = eval(a.value)
+	}
+
+	function cls(){
+		a.value=""
+	}
+
+	function del (){
+		a.value = a.value.slice(0, -1)
+	}
+
+	window.onload = function(){
+		a=document.getElementById('inputsc')
+	}
+
+</script>
+
+
+
+<!-------THIS PART IS CSS--->
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: box-shadow;
+		font-family: sans-serif;
+		background-color: black;
+	}
+	.header img{
+		width: 100%;
+
+	}
+
+	.container {
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.calculator {
+		background-color: lightgreen;
+		padding: 15px;
+		border-radius: 30px;
+		display: grid;
+		grid-template-columns: repeat(4, 68px);
+	}
+
+	input {
+		grid-column: span 4;
+		height: 70px
+		font-size: 25px;
+		background-color: black;
+		color: dodgerblue;
+		border: none;
+		border-radius: 15px;
+		text-align: center;
+		margin-top: 40px;
+		margin-bottom: 30px;
+		padding: 20px;
+		margin: 8px; 
+	}
+
+
+	button {
+		height: 48px;
+		width: 48px;
+		color: red;
+		background-color: black;
+		border: none;
+		border-radius: 20%;
+		margin: 8px;
+		font-size: 16px;
+		font-weight: bold;
+	}
+
+	.cali {
+		background-color: darkred;
+		height: 48px;
+		width: 100px;
+		font-size: 30px;
+		right: 0px;
+		color: white;
+		border-radius: 15px;
+	}
+	@media screen and (max-width: 480px) {
+		h2, b, i {
+			font-size: 25px;
+			text-align: center;
+		}
+	}
+
+
+</style>
